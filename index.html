@@ -16,18 +16,16 @@
       height: 100%;
     }
   </style>
+  <script src="https://cdn.botpress.cloud/webchat/v2/inject.js"></script>
 </head>
 <body>
   <div id="webchat" style="width: 100%; height: 600px;"></div>
-
-  <!-- Botpress Embed -->
-  <script src="https://cdn.botpress.cloud/webchat/v2/inject.js"></script>
   <script>
-    window.botpressWebChat.init({
-      configUrl: "https://files.bpcontent.cloud/2025/05/01/20/20250501202222-PELO7GCP.json",
-      selector: "#webchat",
-      showCloseButton: false,
-      hideWidget: true
+    document.addEventListener("DOMContentLoaded", function () {
+      window.botpress.init({
+        configUrl: "https://files.bpcontent.cloud/2025/05/01/20/20250501202222-PELO7GCP.json",
+        selector: "#webchat"
+      });
     });
   </script>
 </body>
