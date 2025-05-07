@@ -1,11 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zenko AI Chat</title>
-  <script src="https://cdn.botpress.cloud/webchat/v2/inject.js"></script>
   <style>
     html, body {
       margin: 0;
@@ -17,40 +15,19 @@
       width: 100%;
       height: 100%;
     }
-    #webchat .bpWebchat {
-      position: unset;
-      width: 100%;
-      height: 100%;
-      max-height: 100%;
-      max-width: 100%;
-    }
-    #webchat .bpFab {
-      display: none;
-    }
   </style>
 </head>
 <body>
-  <div id="webchat"></div>
+  <div id="webchat" style="width: 100%; height: 600px;"></div>
+
+  <!-- Botpress Embed -->
+  <script src="https://cdn.botpress.cloud/webchat/v2/inject.js"></script>
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const interval = setInterval(() => {
-        if (window.botpress && document.querySelector("#webchat")) {
-          clearInterval(interval);
-          window.botpress.init({
-            botId: "6d7763c6-a2ff-4980-9486-b44f2268d5e6",
-            configuration: {
-              variant: "soft",
-              themeMode: "light",
-              fontFamily: "inter"
-            },
-            clientId: "54e19bb8-c54b-47ed-ae43-001c7fb24a81",
-            selector: "#webchat"
-          });
-          window.botpress.on("webchat:ready", () => {
-            window.botpress.open();
-          });
-        }
-      }, 200);
+    window.botpressWebChat.init({
+      configUrl: "https://files.bpcontent.cloud/2025/05/01/20/20250501202222-PELO7GCP.json",
+      selector: "#webchat",
+      showCloseButton: false,
+      hideWidget: true
     });
   </script>
 </body>
